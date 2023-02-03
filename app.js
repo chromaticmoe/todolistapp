@@ -18,7 +18,7 @@ mongoose.set('strictQuery', true);
 main().catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect("mongodb+srv://" + DB_USER + ":" + DB_PASS + "@cluster0.lwj2vis." + DB_HOST + "/todolistDB");
+    await mongoose.connect("mongodb+srv://" + MDB_USER + ":" + MDB_PASS + "@cluster0.lwj2vis." + MDB_HOST + "/todolistDB");
 }
 app.set('view engine', 'ejs');
 
