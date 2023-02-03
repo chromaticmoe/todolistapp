@@ -5,16 +5,20 @@ const _ = require("lodash");
 const e = require("express");
 
 const app = express();
-import dotenv from 'dotenv';
+const dotenv = require("dotenv");
 
 dotenv.config();
+
+const MDB_HOST = process.env.DB_HOST
+const MDB_USER = process.env.DB_USER
+const MDB_PASS = process.env.DB_PASS
 
 mongoose.set('strictQuery', true);
 
 main().catch(err => console.log(err));
 
 async function main() {
-    await mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.lwj2vis.${process.env.DB_HOST}/todolistDB`);
+    await mongoose.connect("mongodb+srv://" + DB_USER + ":" + DB_PASS + "@cluster0.lwj2vis." + DB_HOST + "/todolistDB");
 }
 app.set('view engine', 'ejs');
 
